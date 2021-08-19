@@ -1,6 +1,7 @@
 # vue-study
 
-### Vue-Todo
+
+## Vue-Todo
 
 vue로 만든 스케줄 웹 애플리케이션
 1. 스케줄 추가
