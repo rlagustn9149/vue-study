@@ -1,9 +1,9 @@
 <template>
   <div>
       <ul>
-        <li v-for="(todoItem, index) in todoItems" v-bind:key="todoItem.item" class="shadow">
+        <li v-for="(todoItem, index) in propsdata" v-bind:key="todoItem.item" class="shadow">
           <i class="checkBtn fas fa-check" v-bind:class="{checkBtnCompleted: todoItem.completed}"
-              v-on:click="toggleComplete(todoItem,index)"></i>
+              v-on:click="toggleComplete(todoItem, index)"></i>
           <span v-bind:class="{textCompleted: todoItem.completed}">{{todoItem.item}}</span>
           <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
             <i class="fas fa-trash-alt"></i>
@@ -15,30 +15,13 @@
 
 <script>
 export default {
-  data: function(){
-    return{
-      todoItems:[]
-    }
-  },
+  props:['propsdata'],
   methods:{
     removeTodo: function(todoItem, index){
-      localStorage.removeItem(todoItem);
-      this.todoItems.splice(index, 1); //특정 인덱스부터 몇개의 값을 지우고 새로운 배열을 반환 slice() = 값을 지우고 기존 배열을 반환
+      this.$emit('removeItem', todoItem, index);
     },
-    toggleComplete: function(todoItem){
-      todoItem.completed = !todoItem.completed;
-      //로컬스토리지 갱신
-      localStorage.removeItem(todoItem.item);
-      localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-    }
-  },
-  created:function(){
-    if(localStorage.length>0){
-      for(var i = 0; i<localStorage.length; i++){
-        if(localStorage.key(i)!=='loglevel:webpack-dev-server'){
-          this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
-        }
-      }
+    toggleComplete: function(todoItem, index){
+      this.$emit('toggleItem',todoItem, index);
     }
   }
 }

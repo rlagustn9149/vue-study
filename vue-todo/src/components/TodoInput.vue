@@ -17,9 +17,8 @@ export default {
   methods:{
     addTodo: function(){
       if(this.newTodoItem !== ''){
-        var obj ={completed: false, item: this.newTodoItem};
-        localStorage.setItem(this.newTodoItem,JSON.stringify(obj));
-       this.clearInput();    
+        this.$emit('addTodoItem',this.newTodoItem);  //$emit : 이벤트 발생시 상위 컴포넌트를 호출
+        this.clearInput();    
       } 
     },  
     clearInput: function() {
