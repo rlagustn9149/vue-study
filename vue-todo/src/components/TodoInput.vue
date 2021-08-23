@@ -4,14 +4,25 @@
       <span class="addContainer" v-on:click="addTodo">
         <i class="fas fa-plus addBtn"></i>
       </span>
+      <Modal v-if="showModal" @close="showModal = false">
+        <template v-slot:header><h3>경고!
+            <i class="closeModalBtn fas fa-times" @click="showModal=false"></i>
+            </h3>        
+        </template>  
+        <template v-slot:body>아무것도 입력하지 않았습니다.</template>
+        
+      </Modal>
   </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue'
+
 export default {
   data:function(){
     return{
-      newTodoItem: ""
+      newTodoItem: "",
+      showModal: false
     }
   },
   methods:{
@@ -19,11 +30,16 @@ export default {
       if(this.newTodoItem !== ''){
         this.$emit('addTodoItem',this.newTodoItem);  //$emit : 이벤트 발생시 상위 컴포넌트를 호출
         this.clearInput();    
+      }else{
+        this.showModal = !this.showModal;
       } 
     },  
     clearInput: function() {
        this.newTodoItem="";
     }
+  },
+  components:{
+    Modal: Modal
   }
 
 }
@@ -53,5 +69,8 @@ input:focus{
 .addBtn{
   color: white;
   vertical-align:middle;
+}
+.closeModalBtn{
+  color: #42b983;
 }
 </style>
