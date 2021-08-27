@@ -9,6 +9,7 @@ vue로 만든 스케쥴 웹 애플리케이션
 3. 스케줄 체크(completed 여부)
 4. refactoring(component container) App.vue=>(컨테이너)   Footer, Input, List, Header => UI 표현
 5. Modal 구현, Transitions & Animation
+6. ES6 문법 적용
 
 
 
