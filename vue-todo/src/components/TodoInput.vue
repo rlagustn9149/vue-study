@@ -28,7 +28,8 @@ export default {
   methods:{
     addTodo(){
       if(this.newTodoItem !== ''){
-        this.$emit('addTodoItem',this.newTodoItem);  //$emit : 이벤트 발생시 상위 컴포넌트를 호출
+        //this.$emit('addTodoItem',this.newTodoItem);  //$emit : 이벤트 발생시 상위 컴포넌트를 호출
+        this.$store.commit('addOneItem',this.newTodoItem);   // store.js의 addOneItem을 호출 위의 것과 같은 역할 mutation을 통한 refactoring!
         this.clearInput();    
       }else{
         this.showModal = !this.showModal;
@@ -36,6 +37,7 @@ export default {
     },  
     clearInput() {
        this.newTodoItem="";
+       
     }
   },
   components:{

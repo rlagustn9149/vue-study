@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <TodoHeader></TodoHeader>
-    <TodoInput v-on:addTodoItem="addOneItem"></TodoInput>   
-    <TodoList v-bind:propsdata="todoItems" v-on:removeItem="removeOneItem" v-on:toggleItem="toggleOneItem"></TodoList>
-    <TodoFooter v-on:clearAll="clearAllItems"></TodoFooter>
+    <TodoInput></TodoInput>   
+    <TodoList></TodoList>
+    <TodoFooter></TodoFooter>
   </div>
 </template>
 
@@ -14,33 +14,6 @@ import TodoList from './components/TodoList.vue'
 import TodoFooter from './components/TodoFooter.vue'
 
 export default {
-    data(){
-      return{
-        todoItems: []
-      }
-    },
-    methods:{
-      addOneItem(todoItem){
-        const obj ={completed: false, item: todoItem};
-        localStorage.setItem(todoItem,JSON.stringify(obj));
-        this.todoItems.push(obj);
-      },
-      removeOneItem(todoItem,index){
-        localStorage.removeItem(todoItem.item);
-        this.todoItems.splice(index, 1); //특정 인덱스부터 몇개의 값을 지우고 새로운 배열을 반환 slice() = 값을 지우고 기존 배열을 반환
-      },
-      toggleOneItem(todoItem, index){
-        this.todoItems[index].completed = !this.todoItems[index].completed;
-        //로컬스토리지 갱신
-        localStorage.removeItem(todoItem.item);
-        localStorage.setItem(todoItem.item, JSON.stringify(todoItem));
-      },
-      clearAllItems(){
-        localStorage.clear();
-        this.todoItems = [];
-      }
-    },
-  
   components:{
     TodoHeader,
     TodoInput,

@@ -17,6 +17,10 @@
   - 2.x : 필요 x
   - 3.x : 필요 o <br><br><br>
 
+- state는 왜 mutations으로 변경할까?
+  - 특정 컴포넌트에서 변경을 할때 추적이 용이해짐
+  - 뷰의 반응성을 받기 수월하게 하기 위해
+
 ## Vue-Todo
 
 vue로 만든 스케쥴 웹 애플리케이션
@@ -25,7 +29,8 @@ vue로 만든 스케쥴 웹 애플리케이션
 3. 스케줄 체크(completed 여부)
 4. refactoring(component container) App.vue=>(컨테이너)   Footer, Input, List, Header => UI 표현
 5. Modal 구현, Transitions & Animation
-6. ES6 문법 적용
+6. ES6 문법 적용 
+7. refactoring(mutations)
 
 
 ## vue-news
