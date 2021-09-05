@@ -21,6 +21,10 @@
   - 특정 컴포넌트에서 변경을 할때 추적이 용이해짐
   - 뷰의 반응성을 받기 수월하게 하기 위해
 
+- actions
+  - 비동기 처리
+  - Promise, ES6 ansync와 같은 비동기 처리가 필요할때 사용 
+  
 ## Vue-Todo
 
 vue로 만든 스케쥴 웹 애플리케이션
@@ -31,6 +35,7 @@ vue로 만든 스케쥴 웹 애플리케이션
 5. Modal 구현, Transitions & Animation
 6. ES6 문법 적용 
 7. refactoring(mutations)
+8. vue 헬퍼함수(mapGetters, mapState, mapMutations, mapActions) 
 
 
 ## vue-news
