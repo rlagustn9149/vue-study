@@ -15,7 +15,7 @@
 
 - ES6 이해도
   - 2.x : 필요 x
-  - 3.x : 필요 o <br><br><br>
+  - 3.x : 필요 o 
 
 - state는 왜 mutations으로 변경할까?
   - 특정 컴포넌트에서 변경을 할때 추적이 용이해짐
@@ -47,6 +47,7 @@ vue로 만든 뉴스 웹 애플리케이션
 
 
 ## vue-webgame
+vue로 만든 웹 게임
 
 1. 구구단
   - {{}} => 데이터 변수를 사용 가능
@@ -61,7 +62,14 @@ vue로 만든 뉴스 웹 애플리케이션
   - props: Component를 사용하는 곳에서 변수를 넘겨 component에서 해당 값을 사용할때 사용(달라지는 내용을 props를 이용해 넘긴다.)
   - webpack : 스크립트를 통합시켜주는 장점이 있다.
 
+3. 숫자야구
+  - 절대경로 이용시 노드에서 제공해주는 것을 활용한다 <br>
+  const path = require('path');
+  path: path.join(__dirname, '경로명') 이런식으로 절대경로를 잡아줄 수 있다
+  - v-for=" data in datas"  => datas 배열 안에 있는 값들을 꺼내서 출력해준다
 
 
+
+`
 
 
