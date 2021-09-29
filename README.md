@@ -68,8 +68,9 @@ vue로 만든 웹 게임
   path: path.join(__dirname, '경로명') 이런식으로 절대경로를 잡아줄 수 있다
   - v-for=" data in datas"  => datas 배열 안에 있는 값들을 꺼내서 출력해준다
 
+4. 반응속도체크
 
 
-`
-
+5. 가위바위보
+  - life cycle : 1. created : 컴포넌트가 보여지긴 하지만 화면에 나타나기 전, 2. mounted : 화면에 나타난 후 , 3. updated : 업데이트 , 4. destroyed : 파괴
 
