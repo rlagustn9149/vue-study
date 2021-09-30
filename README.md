@@ -74,3 +74,6 @@ vue로 만든 웹 게임
 5. 가위바위보
   - life cycle : 1. created : 컴포넌트가 보여지긴 하지만 화면에 나타나기 전, 2. mounted : 화면에 나타난 후 , 3. updated : 업데이트 , 4. destroyed : 파괴
 
+6. 로또
+  - watch : 값의 변화를 확인해 실행함
+
